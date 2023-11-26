@@ -49,5 +49,11 @@ namespace WpfApp1
             LWProduct.ItemsSource = dt.DefaultView;
             data.CloseConnection();
         }
+
+        private void AutorizeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AutorizationWindow autorize = new AutorizationWindow();
+            autorize.Show();
+        }
     }
 }

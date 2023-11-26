@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="ООО Столовые приборы" Height="450" Width="800">
+        Title="Main Window" Height="500" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="350"/>
+            <RowDefinition Height="380"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TabControl>
@@ -48,5 +48,7 @@
                 </ListView>
             </TabItem>
         </TabControl>
+        <Button Name="AutorizeBtn" HorizontalAlignment="Right" Margin="10" Grid.Row="1"
+            Content="Авторизация" Width="100" Height="30" Click="AutorizeBtn_Click"/>
     </Grid>
 </Window>
