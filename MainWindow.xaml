@@ -1,0 +1,52 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="ООО Столовые приборы" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="350"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TabControl>
+            <TabItem Header="DataGrid">
+                <DataGrid x:Name="DGProduct" Margin="10">
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="ListView">
+                <ListView x:Name="LWProduct" Margin="10" >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=ProductArticleNumber}"
+                                            Header="Артикул" Width="80"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=ProductName}"
+                                            Header="Название" Width="100"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=ProductDescription}"
+                                            Header="Описание" Width="100" />
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=ProductCategory}"
+                                            Header="Категория" Width="100"/>
+                            <GridViewColumn Header="Фото" Width="150">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding Path=ProductPhoto}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=ProductManufacturer}"
+                                            Header="Производитель" Width="80"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=ProductCost}"
+                                            Header="Цена" Width="80"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=ProductDiscountAmount}"
+                                            Header="Скидка" Width="80"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=ProductQuantityInStock}"
+                                            Header="Остаток" Width="80"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
