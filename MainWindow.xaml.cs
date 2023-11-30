@@ -55,5 +55,10 @@ namespace WpfApp1
             AutorizationWindow autorize = new AutorizationWindow();
             autorize.Show();
         }
+
+        private void RegistartionBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
