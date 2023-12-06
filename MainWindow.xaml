@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Main Window" Height="550" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
+        <!--Разделение окна на несколько колонок и строк-->
         <Grid.RowDefinitions>
             <RowDefinition Height="380"/>
             <RowDefinition Height="*"/>
@@ -16,15 +17,23 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <!--Таб контрол-->
         <TabControl Grid.ColumnSpan="2">
+            <!--Первая страница контрола с datagrid-->
             <TabItem Header="DataGrid">
+                <!--простой датагрид, с автоматическим заполнением-->
                 <DataGrid x:Name="DGProduct" Margin="10">
                 </DataGrid>
             </TabItem>
+            <!--Вторая страница контрола с listview-->
             <TabItem Header="ListView">
+                <!--В нем уже колонки реализованы здесь-->
                 <ListView x:Name="LWProduct" Margin="10" >
                     <ListView.View>
+                        <!--Внутри объявлен gridview, для описания колонок-->
                         <GridView>
+                            <!--Из важных моментов в каждой из колонок это элемент DisplayMemberPath, позволяет
+                            сделать привязку к необходимой колонке из БД, биндинг обязательно должен полностью совпадать с его названием-->
                             <GridViewColumn DisplayMemberBinding="{Binding Path=ProductArticleNumber}"
                                             Header="Артикул" Width="80"/>
                             <GridViewColumn DisplayMemberBinding="{Binding Path=ProductName}"
@@ -33,6 +42,7 @@
                                             Header="Описание" Width="100" />
                             <GridViewColumn DisplayMemberBinding="{Binding Path=ProductCategory}"
                                             Header="Категория" Width="100"/>
+                            <!--Если есть необходимость отобразить фотографии в табличке, это можно сделать так-->
                             <GridViewColumn Header="Фото" Width="150">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
@@ -53,14 +63,9 @@
                 </ListView>
             </TabItem>
         </TabControl>
-        <TextBlock Text="Искать:" Grid.Row="1" Width="50" Height="20" HorizontalAlignment="Left" Margin="10"/>
-        <TextBox x:Name="SearchTB" Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" Margin="60,0,0,0"/>
-        
+        <!--Обычная кнопка для перехода на другое окно-->
         <Button Name="AutorizeBtn" HorizontalAlignment="Right" Margin="0, 0, 10, 10" Grid.Row="2" 
                 Content="Авторизация" Width="100" Height="30" Click="AutorizeBtn_Click" 
-                Grid.Column="1" VerticalAlignment="Bottom"/>
-        <Button Name="RegistartionBtn" HorizontalAlignment="Center" Margin="50, 0, 0, 10" Grid.Row="2" 
-                Content="Регистрация" Width="100" Height="30" Click="RegistartionBtn_Click"
                 Grid.Column="1" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

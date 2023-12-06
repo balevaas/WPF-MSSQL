@@ -115,5 +115,8 @@
     <Resource Include="Image\T793T4.jpg" />
     <Resource Include="Image\А112Т4.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Важно.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="AutorizationWindow" Height="200" Width="300" WindowStartupLocation="CenterScreen">
     <Grid>
+        <!--Аналогично, разделение окна на несколько строк и столбцов, верстка-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="80"/>
             <ColumnDefinition Width="*"/>
@@ -22,7 +23,7 @@
         <TextBlock Text="Пароль:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"
                    HorizontalAlignment="Right" Margin="10, 10, 0, 0"/>
         <TextBox Grid.Row="0" Grid.Column="1" x:Name="loginTB" Margin="10"/>
-        <TextBox Grid.Row="1" Grid.Column="1" x:Name="passwordTB" Margin="10"/>
+        <PasswordBox Grid.Row="1" Grid.Column="1" x:Name="passwordTB" Margin="10" PasswordChar="*"/>
 
         <Button Content="Войти" Grid.ColumnSpan="2" Grid.Row="3" Name="AutorizeBtn"
                 VerticalAlignment="Top" Margin="10" Height="20" Width="100" Click="AutorizeBtn_Click"/>
